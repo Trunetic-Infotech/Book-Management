@@ -6,6 +6,10 @@ function Login() {
 
     const navigate= useNavigate();
 
+    const handleSignUpClick=()=>{
+      navigate('/signup');
+    }
+
 
   return (
     <div>
@@ -60,7 +64,10 @@ function Login() {
 
             <p className="text-center text-sm text-gray-500 mt-4">
               Don't have an account?{" "}
-              <a href="#" className="text-indigo-600 hover:underline">
+              <a
+               
+               onClick={handleSignUpClick}
+               className="text-indigo-600 hover:underline">
                 Sign up
               </a>
             </p>

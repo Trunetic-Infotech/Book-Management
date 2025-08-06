@@ -1,9 +1,6 @@
-import React from 'react'
-
-function BookCatalog() {
-  return (
-    <div>BookCatalog</div>
+const BookCatalog=()=>{
+  return(
+    <div>book</div>
   )
 }
-
 export default BookCatalog
