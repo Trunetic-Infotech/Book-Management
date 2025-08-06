@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Books from "../../assets/books.png";
-import invoice from "../../assets/invoice.png";
+import invoice from "../../assets/books1.png";
 import { BookOpen, Store, CheckCircle } from "lucide-react";
 import {
   LineChart,
@@ -30,10 +30,7 @@ function Dashboard() {
       Img: invoice,
       label: "Sold Books",
     },
-    {
-      icon: Books,
-      label: "Total No Of Request",
-    },
+  
   ];
   return (
     <div className="flex flex-col gap-5 p-4 sm:p-6 md:p-8 lg:p-8">

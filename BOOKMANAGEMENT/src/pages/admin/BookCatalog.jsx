@@ -104,7 +104,7 @@ const BookCatalog = () => {
         <select
           value={selectedSubject}
           onChange={(e) => setSelectedSubject(e.target.value)}
-          className="bg-gradient-to-r from-[#6A82C1] to-[#5A6FA7] text-black  px-4 py-2 rounded-lg border  shadow-md  "
+          className="bg-gradient-to-r from-[#7c90c0] to-[#90a1ce] text-black font-medium px-4 py-2 rounded-lg border border-white shadow-md  "
         >
           <option>All Books</option>
           <option>English</option>
@@ -118,7 +118,7 @@ const BookCatalog = () => {
         </select>
 
         {/* Standard Select */}
-        <select className="bg-gradient-to-r from-[#6A82C1] to-[#5A6FA7] text-black font-medium px-4 py-2 rounded-lg border border-white shadow-md ">
+        <select className="bg-gradient-to-r from-[#7c90c0] to-[#90a1ce] text-black font-medium px-4 py-2 rounded-lg border border-white shadow-md ">
           <option>All Stds</option>
           <option>Std5th</option>
           <option>Std5th</option>
