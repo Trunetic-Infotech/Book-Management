@@ -3,23 +3,16 @@ import AdminLayout from "../layouts/AdminLayout";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Dashboard from "../pages/admin/Dashboard";
 import BookCatalog from "../pages/admin/BookCatalog";
-
 import OrderDetails from "../pages/admin/OrderDetails";
-
-
-
-
 
 function AdminRoute() {
   return (
     <AdminLayout>
-      <Routes>
-      
+      <Routes> 
         <Route index element={<Navigate to="dashboard" />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="bookcatalog" element={<BookCatalog />} />
         <Route path="orderDetails" element={<OrderDetails />} />
-        
         <Route path="*" element={<Navigate to="dashboard" />} />
       </Routes>
     </AdminLayout>

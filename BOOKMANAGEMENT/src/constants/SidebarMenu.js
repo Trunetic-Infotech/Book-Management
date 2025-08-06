@@ -13,4 +13,5 @@ export const adminMenu = [
   { label: "BookCatalog", icon: BookOpen, path: "/admin/bookcatalog" },
   { label: "Order Details", icon: Users, path: "/admin/orderDetails" },
   { label: "Logout", icon: LogOut, path: "/admin/logout" }, 
+
 ];
