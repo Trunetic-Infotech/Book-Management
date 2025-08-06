@@ -4,12 +4,15 @@ import {
   Users,
   Settings,
   LogOut,
+  BookDashed,
+  BookCheck,
+  BookPlus,
 } from "lucide-react";
 
 export const adminMenu = [
   { label: "Home", icon: Home, path: "/admin/dashboard" },
   { label: "BookCatalog", icon: BookOpen, path: "/admin/bookcatalog" },
-  { label: "Users", icon: Users, path: "/admin/users" },
-  { label: "Settings", icon: Settings, path: "/admin/settings" },
+
   { label: "Logout", icon: LogOut, path: "/admin/logout" },
+  { label: "AddBook", icon: BookPlus, path: "/admin/addbook" },
 ];
