@@ -5,7 +5,9 @@ import Dashboard from "../pages/admin/Dashboard";
 import BookCatalog from "../pages/admin/BookCatalog";
 
 import OrderDetails from "../pages/admin/OrderDetails";
-import Logout from "../pages/admin/Logout";
+
+
+
 
 
 function AdminRoute() {
@@ -17,7 +19,7 @@ function AdminRoute() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="bookcatalog" element={<BookCatalog />} />
         <Route path="orderDetails" element={<OrderDetails />} />
-        <Route path="logout" element={<Logout />} />
+        
         <Route path="*" element={<Navigate to="dashboard" />} />
       </Routes>
     </AdminLayout>

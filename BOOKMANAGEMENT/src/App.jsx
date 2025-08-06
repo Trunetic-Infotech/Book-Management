@@ -10,14 +10,13 @@ function App() {
 
   return (
     <>
-
       <Routes>
-        <Route path='/' element={<Login/>} />
+        <Route path="/" element={<Login />} />
         <Route path="/admin/*" element={<AdminRoute />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

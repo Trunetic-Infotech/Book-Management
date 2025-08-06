@@ -1,15 +1,10 @@
-
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 
-function Login() {
+function ForgotPassword() {
 
     const navigate= useNavigate();
-
-    const handleSignUpClick=()=>{
-      navigate('/signup');
-    }
 
 
   return (
@@ -17,23 +12,11 @@ function Login() {
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-700 via-teal-500 to-white">
         <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-            Login
+            Forgot Your Password
           </h2>
 
           <form
-            onSubmit={(e) => {
-              e.preventDefault();
-
-        
-                navigate("/admin/dashboard");
             
-              // if (role === "user") {
-              //   navigate("/user/userdashboard");
-              // }
-              // if (role === "hr") {
-              //   navigate("/hr/hrdashboard");
-              // }
-            }}
             className="space-y-5"
           >
             <div>
@@ -46,34 +29,17 @@ function Login() {
               />
             </div>
 
-            <div>
-              <label className="block text-gray-700 mb-1">Password</label>
-              <input
-                type="password"
-                placeholder="••••••••"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
-                // required
-              />
-            </div>
-
             <button
               type="submit"
               className="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-300"
             >
-              Login
+              ResetPassword
             </button>
 
             <p className="text-center text-sm text-gray-500 mt-4">
               Don't have an account?{" "}
-              <a
-               
-               onClick={handleSignUpClick}
-               className="text-indigo-600 hover:underline">
-                Sign up
-              </a>
-              {/* Don't have an account?{" "} */}
-              <Link to="/forgotpassword" className="text-indigo-600 hover:underline">
-                ForgotPassword
+              <Link to="/" className="text-indigo-600 hover:underline">
+                Back To Login
               </Link>
             </p>
           </form>
@@ -83,4 +49,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default ForgotPassword;

@@ -3,6 +3,9 @@ import {
   BookOpen,
   Users,
   LogOut,
+  BookDashed,
+  BookCheck,
+  BookPlus,
 } from "lucide-react";
 
 export const adminMenu = [

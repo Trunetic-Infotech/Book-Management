@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import Books from "../../assets/books.png";
 import invoice from "../../assets/invoice.png";
 import { BookOpen, Store, CheckCircle } from "lucide-react";
@@ -28,7 +28,7 @@ function Dashboard() {
     },
     {
       Img: invoice,
-      label: "Invoice",
+      label: "Sold Books",
     },
     {
       icon: Books,
@@ -48,15 +48,19 @@ function Dashboard() {
         {roles.map((role, index) => {
           if (role.label === "Invoice") {
             return (
-              <Link to="/admin/invoices" key={index}> 
-                <div
-                  className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl flex flex-col gap-1 bg-gradient-to-b from-[#FFC7C7] to-[#D27070] cursor-pointer hover:bg-[#f0c0c0]"
-                >
+              <Link to="/admin/invoices" key={index}>
+                <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl flex flex-col gap-1 bg-gradient-to-b from-[#FFC7C7] to-[#D27070] cursor-pointer hover:bg-[#f0c0c0]">
                   <div className="w-16 h-16 bg-[#c1f7ff] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src={role.Img} alt={role.label} className="w-10 h-10" />
+                    <img
+                      src={role.Img}
+                      alt={role.label}
+                      className="w-10 h-10"
+                    />
                   </div>
 
-                  <h1 className="text-lg font-extrabold text-center mb-3">{role.label}</h1>
+                  <h1 className="text-lg font-extrabold text-center mb-3">
+                    {role.label}
+                  </h1>
 
                   <div className="flex justify-center text-2xl font-bold">
                     <h1>10</h1>
@@ -74,7 +78,9 @@ function Dashboard() {
                 <img src={role.Img} alt={role.label} className="w-10 h-10" />
               </div>
 
-              <h1 className="text-lg font-extrabold text-center mb-3">{role.label}</h1>
+              <h1 className="text-lg font-extrabold text-center mb-3">
+                {role.label}
+              </h1>
 
               <div className="flex justify-center text-2xl font-bold">
                 <h1>10</h1>
