@@ -1,16 +1,12 @@
-
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
 
-    const navigate= useNavigate();
-
-    const handleSignUpClick=()=>{
-      navigate('/signup');
-    }
-
+  const handleSignUpClick = () => {
+    navigate("/signup");
+  };
 
   return (
     <div>
@@ -24,9 +20,8 @@ function Login() {
             onSubmit={(e) => {
               e.preventDefault();
 
-        
-                navigate("/admin/dashboard");
-            
+              navigate("/admin/dashboard");
+
               // if (role === "user") {
               //   navigate("/user/userdashboard");
               // }
@@ -56,6 +51,13 @@ function Login() {
               />
             </div>
 
+            <Link
+              to="/forgotpassword"
+              className="text-indigo-600 hover:underline"
+            >
+              ForgotPassword
+            </Link>
+
             <button
               type="submit"
               className="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-300"
@@ -66,15 +68,12 @@ function Login() {
             <p className="text-center text-sm text-gray-500 mt-4">
               Don't have an account?{" "}
               <a
-               
-               onClick={handleSignUpClick}
-               className="text-indigo-600 hover:underline">
+                onClick={handleSignUpClick}
+                className="text-indigo-600 hover:underline"
+              >
                 Sign up
               </a>
               {/* Don't have an account?{" "} */}
-              <Link to="/forgotpassword" className="text-indigo-600 hover:underline">
-                ForgotPassword
-              </Link>
             </p>
           </form>
         </div>
