@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Bell, Menu, User, X } from "lucide-react";
-import bookstore from "../assets/bookstore1.png";
+import bookstore from "../assets/book1234.png";
 
 import { Moon, Sun } from "lucide-react";
 import logo from "../assets/logo.png";
@@ -40,8 +40,12 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
           className="py-2 px-4 sm:px-3 rounded-xl border border-gray-300 focus:outline-none w-full sm:w-[200px] md:w-[250px] lg:w-[350px]"
         /> */}
 
-        <div>
-          <img src={bookstore} className="h-[120px] w-[200px] " />
+        <div className="bg-white h-[80px] w-[140px]  rounded-xl  flex items-center justify-center p-2">
+          <img
+            src={bookstore}
+            alt="Bookstore"
+            className=" object-cover"
+          />
         </div>
       </div>
 

@@ -83,8 +83,8 @@ const AddBook = () => {
     //   </div>
     // </div>
 
-    <div className=" flex items-center justify-center p-6">
-      <div className="w-full max-w-2xl bg-white/10 backdrop-blur-md rounded-xl shadow-xl p-8  bg-gray-800">
+    <div className=" flex items-center justify-center p-6 ">
+      <div className="w-full max-w-2xl bg-gray-700 backdrop-blur-md rounded-xl shadow-xl p-8">
         <h2 className="text-2xl font-bold text-center text-white mb-6">
           📚 Add New Book
         </h2>

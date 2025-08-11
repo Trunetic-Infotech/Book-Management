@@ -14,7 +14,7 @@ function Sidebar({ sidebarItems, isSidebarOpen, setIsSidebarOpen }) {
 
   return (
     <div
-      className={`absolute lg:static h-screen  ${
+      className={` top-0 left-0 lg:static h-screen  ${
         isSidebarOpen ? "block " : "hidden lg:block  "
       } `}
     >
