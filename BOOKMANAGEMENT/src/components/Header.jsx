@@ -5,16 +5,26 @@ import bookstore from "../assets/book1234.png";
 
 import { Moon, Sun } from "lucide-react";
 import logo from "../assets/logo.png";
+import { useSelector } from "react-redux";
 
 function Header({ isSidebarOpen, setIsSidebarOpen }) {
   const [open, setOpen] = useState(false);
   console.log(isSidebarOpen);
+  const user = useSelector((state) => state.auth.user);
 
   const userData = {
-    name: "Amar",
+    name: user?.full_name,
     role: "Admin",
-    email: "amar@trunetic.com",
-    status: "Active",
+    email: user?.email,
+    Joined: new Date(user?.created_at).toLocaleString("en-IN", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true,
+    }),
   };
 
   return (
@@ -41,11 +51,7 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
         /> */}
 
         <div className="bg-white h-[80px] w-[140px]  rounded-xl  flex items-center justify-center p-2">
-          <img
-            src={bookstore}
-            alt="Bookstore"
-            className=" object-cover"
-          />
+          <img src={bookstore} alt="Bookstore" className=" object-cover" />
         </div>
       </div>
 
@@ -60,41 +66,44 @@ function Header({ isSidebarOpen, setIsSidebarOpen }) {
 
         {/* Profile Popover */}
         {open && (
-          <div className="absolute top-14 right-0 w-64 bg-white shadow-lg rounded-xl z-50 p-6 text-sm ">
-            <div className="mb-3">
-              <p className="text-gray-800 font-bold text-base">
-                {userData.name}
-              </p>
-              <p className="text-gray-500 text-md">{userData.role}</p>
-            </div>
-            <div className="border-t border-black  pt-4">
-              <p>
-                <span className="font-bold text-lg">Email:</span>
-                <span className="text-lg pl-2">{userData.email}</span>
-              </p>
-              <p>
-                <span className="font-bold text-lg">Status:</span>{" "}
-                <span
-                  className={`text-${
-                    userData.status === "Active" ? "green" : "red"
-                  }-600 text-lg font-semibold`}
-                >
-                  {userData.status}
-                </span>
-              </p>
-            </div>
-            <div className="mt-4 flex justify-end gap-2">
-              <button className="text-md px-3 py-2 rounded-md bg-gray-200 hover:bg-gray-200">
-                View
-              </button>
-            </div>
-          </div>
+          <div className="absolute top-14 right-0 w-72 bg-white shadow-xl rounded-2xl z-50 p-6 text-sm">
+  {/* User Info Header */}
+  <div className="mb-4 flex items-center gap-3">
+    <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-xl font-bold text-gray-600">
+      {userData.name?.charAt(0).toUpperCase()}
+    </div>
+    <div>
+      <p className="text-gray-800 font-semibold text-lg">{userData.name}</p>
+      <p className="text-gray-500 text-sm">{userData.role}</p>
+    </div>
+  </div>
+
+  {/* Divider */}
+  <div className="border-t border-gray-200 pt-4 space-y-2">
+    <div className="flex justify-between">
+      <span className="font-medium text-gray-700">Email:</span>
+      <span className="text-gray-900">{userData.email}</span>
+    </div>
+    <div className="flex justify-between">
+      <span className="font-medium text-gray-700">Joined:</span>
+      <span className="text-gray-900 font-semibold">{userData.Joined}</span>
+    </div>
+    {/* Optional Status Badge */}
+    <div className="flex justify-between">
+      <span className="font-medium text-gray-700">Status:</span>
+      <span className="px-2 py-1 rounded-full text-sm font-semibold bg-green-100 text-green-700">
+        Active
+      </span>
+    </div>
+  </div>
+</div>
+
         )}
 
         {/* Bell Icon */}
-        <div className=" flex items-center justify-center h-10 w-10 lg:h-12 lg:w-12 rounded-2xl bg-white shadow cursor-pointer">
+        {/* <div className=" flex items-center justify-center h-10 w-10 lg:h-12 lg:w-12 rounded-2xl bg-white shadow cursor-pointer">
           <Bell className="w-5 h-5 text-gray-700 hover:text-teal-600 transition" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

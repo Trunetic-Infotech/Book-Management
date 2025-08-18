@@ -1,0 +1,34 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# MySQL-related files (optional)
+*.sql
+*.sqlite
+
+# Build output
+dist/
+build/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files (VSCode, WebStorm, etc.)
+.vscode/
+.idea/
+
+# Miscellaneous files
+*.swp
+*.swo
+
+# Dependency lock files (optional for npm/yarn)
+# package-lock.json
+# yarn.lock

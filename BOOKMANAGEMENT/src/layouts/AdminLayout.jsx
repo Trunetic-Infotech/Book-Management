@@ -8,8 +8,8 @@ function AdminLayout({ children }) {
 
    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
-    <div className="flex  h-screen">
-      <div className="lg:w-[20%]  relative">
+    <div className="flex  h-screen relative ">
+      <div className="lg:w-[20%]  absolute md:static z-10">
         <Sidebar sidebarItems={adminMenu} isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>
       </div>
 

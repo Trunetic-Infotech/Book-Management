@@ -1,15 +1,51 @@
 import { LogOut, Menu, X } from "lucide-react";
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/features/authSlice";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 function Sidebar({ sidebarItems, isSidebarOpen, setIsSidebarOpen }) {
   const [showConfirm, setShowConfirm] = useState(false);
   // const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   console.log(isSidebarOpen);
-  const handleLogout = () => {
-    localStorage.clear();
-    navigate("/");
+  const handleLogout = async () => {
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_URL}/admin/logout`,
+        {}, // empty body
+        { withCredentials: true } // Axios config
+      );
+
+      if (response.data.success) {
+        localStorage.clear();
+        dispatch(logout());
+
+        // Show success Swal
+        await Swal.fire({
+          icon: "success",
+          title: "Logged out",
+          text: response.data.message || "You have logged out successfully",
+          timer: 1500,
+          showConfirmButton: false,
+        });
+
+        // Navigate after Swal closes
+        navigate("/");
+      }
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text:
+          error?.response?.data?.message ||
+          "Something went wrong while fetching data",
+      });
+    }
   };
 
   return (
